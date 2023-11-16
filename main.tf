@@ -35,25 +35,22 @@ module "db" {
 
   iam_database_authentication_enabled = true
 
-  vpc_security_group_ids = ["sg-12345678"]
+  vpc_security_group_ids = ["sg-03338ba344b0750c7"]
 
   tags = {
     Owner       = "user"
     Environment = "dev"
   }
 
-  # DB subnet group
+   # DB subnet group
   create_db_subnet_group = true
-  subnet_ids             = ["subnet-12345678", "subnet-87654321"]
+  subnet_ids             = ["subnet-0b917dcda2c28933c", "subnet-0b56b2fe6fc65ae02"]
 
   # DB parameter group
   family = "mysql5.7"
 
   # DB option group
   major_engine_version = "5.7"
-
-  # Database Deletion Protection
-  deletion_protection = true
 
   parameters = [
     {
